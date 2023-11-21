@@ -1,0 +1,90 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./app.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div>
+      <header class="shopify__header">
+        <div class="shopify_header-container">
+          <a
+            href="https://www.shopify.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="shopify__desktop__logo"
+              src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
+              alt="Shopify logo"
+            />
+            <img
+              class="shopify__mobile__logo"
+              src="https://crushingit.tech/hackathon-assets/shopify-icon.svg"
+              alt="Shopify logo"
+            />
+          </a>
+        </div>
+        <!-- search bar -->
+        <div class="shopify__search-container" tabindex="0    ">
+          <label for="search" class="shopify__search-label">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 13 14"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.82264 10.3833C7.89957 11.0841 6.74835 11.5 5.5 11.5C2.46243 11.5 0 9.03757 0 6C0 2.96243 2.46243 0.5 5.5 0.5C8.53757 0.5 11 2.96243 11 6C11 7.24835 10.5841 8.39957 9.8833 9.32264L12.7803 12.2197C13.0732 12.5126 13.0732 12.9874 12.7803 13.2803C12.4874 13.5732 12.0126 13.5732 11.7197 13.2803L8.82264 10.3833ZM9.5 6C9.5 8.20914 7.70914 10 5.5 10C3.29086 10 1.5 8.20914 1.5 6C1.5 3.79086 3.29086 2 5.5 2C7.70914 2 9.5 3.79086 9.5 6Z"
+                fill="#B5B5B5"
+              />
+            </svg>
+          </label>
+          <input
+            type="search"
+            autocomplete="off"
+            placeholder="Search"
+            class="shopify__search"
+            id="search"
+            name="search"
+          />
+        </div>
+        <!-- notification bar & davii colection -->
+        <div class="shopify__navigation">
+          <button class="shopify__notification">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.25203 14.4239L4.8061 14.1427C2.95144 13.9295 2.42542 11.4844 4.02838 10.5274L4.0933 10.4886C4.966 9.96761 5.50045 9.02609 5.50045 8.00969V7.5C5.50045 5.01472 7.51517 3 10.0005 3C12.4857 3 14.5005 5.01472 14.5005 7.5V8.00969C14.5005 9.02609 15.0349 9.96761 15.9076 10.4886L15.9725 10.5274C17.5755 11.4844 17.0495 13.9295 15.1948 14.1427L12.652 14.435V14.8C12.652 16.2912 11.4432 17.5 9.95203 17.5C8.46086 17.5 7.25203 16.2912 7.25203 14.8V14.4239ZM11.152 14.5H8.75203V14.8C8.75203 15.4627 9.28929 16 9.95203 16C10.6148 16 11.152 15.4627 11.152 14.8V14.5ZM8.00045 13H12.0005L15.0235 12.6525C15.453 12.6032 15.5748 12.0369 15.2036 11.8153L15.1387 11.7766C15.0591 11.7291 14.9815 11.6793 14.9057 11.6273C14.7506 11.521 14.6036 11.4055 14.4651 11.2818C14.4405 11.2598 14.4162 11.2377 14.3922 11.2152C13.5144 10.395 13.0005 9.23833 13.0005 8.00969V7.5C13.0005 5.84315 11.6573 4.5 10.0005 4.5C8.3436 4.5 7.00045 5.84315 7.00045 7.5V8.00969C7.00045 9.23833 6.48651 10.395 5.60871 11.2152C5.58469 11.2377 5.56039 11.2598 5.53583 11.2818C5.39734 11.4055 5.25029 11.521 5.09523 11.6273C5.01945 11.6793 4.94176 11.7291 4.86222 11.7766L4.79729 11.8153C4.4261 12.0369 4.5479 12.6032 4.97739 12.6525L8.00045 13Z"
+                fill="#E3E3E3"
+              />
+            </svg>
+          </button>
+
+          <button class="shopify__links">
+            <span class="first__line">Davii Collections</span>
+            <span class="second__line">DC</span>
+          </button>
+        </div>
+      </header>
+    </div>
+  </body>
+</html>
