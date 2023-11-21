@@ -11,6 +11,12 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 :root {
   /* colors variant*/
   --white: #fff;
@@ -24,6 +30,7 @@ input[type="search"]::-webkit-search-results-decoration {
   /* border color variant */
   --stroke-s-100: #e1e1e1;
   --stroke-s-200: #616161;
+  --stroke-s-50: #dbdbdb;
   /* font-family variant */
   --Inter-font: "Inter", sans-serif;
 }
@@ -36,6 +43,7 @@ input[type="search"]::-webkit-search-results-decoration {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .shopify_header-container {
@@ -150,6 +158,72 @@ input[type="search"]::-webkit-search-results-decoration {
   font-family: var(--Inter-font);
   text-align: center;
 }
+
+.notifcation__dropdown {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 1rem;
+  max-width: 22.375rem;
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  border-radius: 0.875rem;
+  border: 1px solid var(--stroke-s-50);
+  background-color: var(--white);
+  box-shadow: 0px 4px 8px 0px #0000000d;
+  font-family: var(--Inter-font);
+  opacity: 1; /* remove when done #ff0000 #ff0000 #ff0000*/
+}
+
+.notifcation__dropdown__header-container {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.notifcation__dropdown__title {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.icon_bar {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.filter__button {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewed__button {
+  height: 1.25rem;
+  width: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter__button:focus,
+.viewed__button:focus {
+  border: 1px solid var(--blue);
+  border-radius: 0.25rem;
+}
+
+.notifcation__message {
+  padding: 1rem;
+  background-color: #f1f1f1;
+  color: var(--grey-g-200);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1375rem;
+}
+
 /*focus on hovering devices  */
 @media screen and (hover: hover) {
   .shopify__search-container:hover {
@@ -209,9 +283,6 @@ input[type="search"]::-webkit-search-results-decoration {
     font-size: 0.75rem;
     color: var(--light);
     font-weight: 500;
-  }
-
-  .second__line {
   }
 }
 
