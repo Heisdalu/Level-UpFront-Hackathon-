@@ -106,10 +106,13 @@
           role="menu"
           class="notifcation__dropdown"
         >
-          <div class="notifcation__dropdown__header-container">
+          <div class="notifcation__dropdown__header-container" role="menuitem">
             <h1 class="notifcation__dropdown__title">Alerts</h1>
             <div class="icon_bar">
-              <button class="filter__button" aria-label="Fllter notification">
+              <button
+                class="filter__button"
+                aria-label="Fllter notification"
+              >
                 <svg
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -154,13 +157,130 @@
               </button>
             </div>
           </div>
-          <p class="notifcation__message">
+          <p class="notifcation__message" role="menuitem">
             Alerts about your store and account will show here
           </p>
         </div>
 
         <!-- my store dropdown -->
-        <!-- <div></div> -->
+        <div
+          class="store__dropdown "
+          id="store__dropdown"
+          role="menu"
+          aria-hidden="true"
+        >
+          <div class="store__header-container">
+            <div class="store__first-header">
+              <span class="store__logo">DC</span>
+              <h1 class="store__owner">Davii collections</h1>
+              <span class="store__checkmark" aria-label="checkmark">
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M13.3332 4L5.99984 11.3333L2.6665 8"
+                    stroke="#303030"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+            <a
+              href="https://admin.shopify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="store__second-header"
+            >
+              <span class="store__home-logo"
+                ><img
+                  src="https://crushingit.tech/hackathon-assets/icon-store.svg"
+                  alt="store logo"
+              /></span>
+              <span class="store__all-text">All stores</span>
+            </a>
+          </div>
+
+          <ul class="store__list">
+            <li class="store__list-link">
+              <a
+                href="https://admin.shopify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Help Center</a
+              >
+            </li>
+            <li class="store__list-link">
+              <a
+                href="https://admin.shopify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Changelog</a
+              >
+            </li>
+            <li class="store__list-link">
+              <a
+                href="https://admin.shopify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Community forums</a
+              >
+            </li>
+            <li class="store__list-link">
+              <a
+                href="https://admin.shopify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Hire a Shopify Partner</a
+              >
+            </li>
+            <li class="store__list-link">
+              <a
+                href="https://admin.shopify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Keyboard shortcuts</a
+              >
+            </li>
+          </ul>
+
+          <div class="store__last_box">
+            <a
+              class="store_details"
+              href="https://admin.shopify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="store__last_username" aria-label="User Name"
+                >David Micheal</span
+              >
+              <span class="store__last_useremail" aria-label="User Email"
+                >davidmicheal@gmail.com</span
+              >
+            </a>
+            <a
+              class="store__manage_account"
+              href="https://admin.shopify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Manage account</a
+            >
+            <a
+              class="store__logout"
+              href="https://admin.shopify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Log out</a
+            >
+          </div>
+        </div>
       </header>
     </div>
   </body>
