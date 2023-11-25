@@ -301,7 +301,7 @@ const notifcationFunc = (e) => {
     if (!btn_expanded) {
       notificationBtn.setAttribute("aria-expanded", !btn_expanded);
       notifcation__dropDwon.classList.add("notifcation__dropdown__toggle");
-      document.querySelector(".filter__button").focus();
+      // document.querySelector(".filter__button").focus();
     } else {
       notificationBtn.setAttribute("aria-expanded", !btn_expanded);
       notifcation__dropDwon.classList.remove("notifcation__dropdown__toggle");
