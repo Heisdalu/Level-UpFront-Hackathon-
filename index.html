@@ -37,6 +37,7 @@
         <div class="shopify__search-container" tabindex="0    ">
           <label for="search" class="shopify__search-label">
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -109,10 +110,7 @@
           <div class="notifcation__dropdown__header-container" role="menuitem">
             <h1 class="notifcation__dropdown__title">Alerts</h1>
             <div class="icon_bar">
-              <button
-                class="filter__button"
-                aria-label="Fllter notification"
-              >
+              <button class="filter__button" aria-label="Fllter notification">
                 <svg
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +162,7 @@
 
         <!-- my store dropdown -->
         <div
-          class="store__dropdown "
+          class="store__dropdown"
           id="store__dropdown"
           role="menu"
           aria-hidden="true"
@@ -282,6 +280,554 @@
           </div>
         </div>
       </header>
+
+      <div class="section__container">
+        <div aria-label="Trial Extension Information" class="trial__container">
+          <h1 class="trial__heading">
+            Extend your trial for $1/month for 3 months on select plans.
+          </h1>
+          <button class="trial__select-plan">Select plan</button>
+          <button aria-label="Exit Modal" class="trial__exit">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M13.9697 15.0303C14.2626 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2626 15.0303 13.9697L11.0607 10L15.0303 6.03033C15.3232 5.73744 15.3232 5.26256 15.0303 4.96967C14.7374 4.67678 14.2626 4.67678 13.9697 4.96967L10 8.93934L6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L8.93934 10L4.96967 13.9697C4.67678 14.2626 4.67678 14.7374 4.96967 15.0303C5.26256 15.3232 5.73744 15.3232 6.03033 15.0303L10 11.0607L13.9697 15.0303Z"
+                fill="#E3E3E3"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="main__container">
+          <div class="setup__container">
+            <div class="setup__sub">
+              <h1 class="setup__header">Setup guide</h1>
+              <button
+                class="setup__collapse"
+                aria-label="setup menu"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="inner_collpase rotate__default">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.71967 8.46967C6.01256 8.17678 6.48744 8.17678 6.78033 8.46967L10.25 11.9393L13.7197 8.46967C14.0126 8.17678 14.4874 8.17678 14.7803 8.46967C15.0732 8.76256 15.0732 9.23744 14.7803 9.53033L10.7803 13.5303C10.4874 13.8232 10.0126 13.8232 9.71967 13.5303L5.71967 9.53033C5.42678 9.23744 5.42678 8.76256 5.71967 8.46967Z"
+                      fill="#4A4A4A"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <p class="setup__text">
+              Use this personalized guide to get your store up and running.
+            </p>
+
+            <div class="progress__container">
+              <div
+                class="progress__completed"
+                aria-label="count of progress complemented"
+              >
+                1 / 5 completed
+              </div>
+              <progress
+                class="progress__bar"
+                id="progress-bar"
+                value="0"
+                max="5"
+                aria-labelledby="progress label"
+              >
+                2 out of 5
+              </progress>
+            </div>
+          </div>
+          <!-- list section -->
+          <div class="main__listItem-container">
+            <div class="main__list__child__box bolden__header" data-tag="1">
+              <div
+                role="checkbox"
+                class="checkbox__box"
+                aria-checked="false"
+                tabindex="0"
+                aria-label=""
+              >
+                <div class="checkbox__svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="#8A8A8A"
+                      stroke-width="2.08333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="5 5"
+                    />
+                  </svg>
+                </div>
+
+                <svg
+                  class="svg__rotate__checkbox"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                    stroke="#1C181D"
+                    stroke-width="2.08333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="done_svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.8162 5.64149C14.0603 5.88557 14.0603 6.2813 13.8162 6.52538L8.39954 11.942C8.15546 12.1861 7.75974 12.1861 7.51566 11.942L4.80733 9.23371C4.56325 8.98963 4.56325 8.5939 4.80733 8.34983C5.0514 8.10575 5.44713 8.10575 5.69121 8.34983L7.9576 10.6162L12.9323 5.64149C13.1764 5.39742 13.5721 5.39742 13.8162 5.64149Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="main__list__item">
+                <div class="main__list__grid">
+                  <button class="main__list__item__header">
+                    Customize your online store
+                  </button>
+                  <div class="main__list__toggle">
+                    <div class="main__list__sub">
+                      <p class="main__list__item__text">
+                        Your temporary store name is currently Davii
+                        collections. The store name appears in your admin and
+                        your online store.
+                        <span class="learn__more">Learn more</span>
+                      </p>
+
+                      <button class="main__list__item__button">
+                        Customize theme
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="main__list__image">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/customise-store.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="main__list__child__box" data-tag="2">
+              <div
+                role="checkbox"
+                class="checkbox__box"
+                aria-checked="false"
+                tabindex="0"
+                aria-label=""
+              >
+                <div class="checkbox__svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="#8A8A8A"
+                      stroke-width="2.08333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="5 5"
+                    />
+                  </svg>
+                </div>
+
+                <svg
+                  class="svg__rotate__checkbox"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                    stroke="#1C181D"
+                    stroke-width="2.08333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="done_svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.8162 5.64149C14.0603 5.88557 14.0603 6.2813 13.8162 6.52538L8.39954 11.942C8.15546 12.1861 7.75974 12.1861 7.51566 11.942L4.80733 9.23371C4.56325 8.98963 4.56325 8.5939 4.80733 8.34983C5.0514 8.10575 5.44713 8.10575 5.69121 8.34983L7.9576 10.6162L12.9323 5.64149C13.1764 5.39742 13.5721 5.39742 13.8162 5.64149Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="main__list__item">
+                <div class="main__list__grid">
+                  <button class="main__list__item__header">
+                    Add your first product
+                  </button>
+                  <div class="main__list__toggle">
+                    <div class="main__list__sub item__hidden">
+                      <p class="main__list__item__text">
+                        Write a description, add photos, and set pricing for the
+                        products you plan to sell.
+                        <span class="learn__more">Learn more</span>
+                      </p>
+
+                      <div class="item__button__box">
+                        <button class="main__list__item__button">
+                          Add product
+                        </button>
+                        <button class="import__button">Import product</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main__list__image item__hidden">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/product.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="main__list__child__box" data-tag="3">
+              <div
+                role="checkbox"
+                class="checkbox__box"
+                aria-checked="false"
+                tabindex="0"
+                aria-label=""
+              >
+                <div class="checkbox__svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="#8A8A8A"
+                      stroke-width="2.08333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="5 5"
+                    />
+                  </svg>
+                </div>
+
+                <svg
+                  class="svg__rotate__checkbox"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                    stroke="#1C181D"
+                    stroke-width="2.08333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="done_svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.8162 5.64149C14.0603 5.88557 14.0603 6.2813 13.8162 6.52538L8.39954 11.942C8.15546 12.1861 7.75974 12.1861 7.51566 11.942L4.80733 9.23371C4.56325 8.98963 4.56325 8.5939 4.80733 8.34983C5.0514 8.10575 5.44713 8.10575 5.69121 8.34983L7.9576 10.6162L12.9323 5.64149C13.1764 5.39742 13.5721 5.39742 13.8162 5.64149Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="main__list__item">
+                <div class="main__list__grid">
+                  <button class="main__list__item__header">
+                    Add a custom domain
+                  </button>
+                  <div class="main__list__toggle">
+                    <div class="main__list__sub item__hidden">
+                      <p class="main__list__item__text">
+                        Your current domain is 222219.myshopify.com but you can
+                        add a custom domain to help customers find your online
+                        store.
+                        <span class="learn__more">Learn more</span>
+                      </p>
+
+                      <button class="main__list__item__button">
+                        Add domain
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="main__list__image item__hidden">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/website.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="main__list__child__box" data-tag="4">
+              <div
+                role="checkbox"
+                class="checkbox__box"
+                aria-checked="false"
+                tabindex="0"
+                aria-label=""
+              >
+                <div class="checkbox__svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="#8A8A8A"
+                      stroke-width="2.08333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="5 5"
+                    />
+                  </svg>
+                </div>
+
+                <svg
+                  class="svg__rotate__checkbox"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                    stroke="#1C181D"
+                    stroke-width="2.08333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="done_svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.8162 5.64149C14.0603 5.88557 14.0603 6.2813 13.8162 6.52538L8.39954 11.942C8.15546 12.1861 7.75974 12.1861 7.51566 11.942L4.80733 9.23371C4.56325 8.98963 4.56325 8.5939 4.80733 8.34983C5.0514 8.10575 5.44713 8.10575 5.69121 8.34983L7.9576 10.6162L12.9323 5.64149C13.1764 5.39742 13.5721 5.39742 13.8162 5.64149Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="main__list__item">
+                <div class="main__list__grid">
+                  <button class="main__list__item__header">
+                    Name your store
+                  </button>
+                  <div class="main__list__toggle">
+                    <div class="main__list__sub item__hidden">
+                      <p class="main__list__item__text">
+                        Your temporary store name is currently Davii
+                        collections. The store name appears in your admin and
+                        your online store.
+                        <span class="learn__more">Learn more</span>
+                      </p>
+
+                      <button class="main__list__item__button">
+                        Name store
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="main__list__image item__hidden">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/name-store.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="main__list__child__box" data-tag="5">
+              <div
+                role="checkbox"
+                class="checkbox__box"
+                aria-checked="false"
+                tabindex="0"
+                aria-label=""
+              >
+                <div class="checkbox__svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="#8A8A8A"
+                      stroke-width="2.08333"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-dasharray="5 5"
+                    />
+                  </svg>
+                </div>
+
+                <svg
+                  class="svg__rotate__checkbox"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                    stroke="#1C181D"
+                    stroke-width="2.08333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="done_svg">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.8162 5.64149C14.0603 5.88557 14.0603 6.2813 13.8162 6.52538L8.39954 11.942C8.15546 12.1861 7.75974 12.1861 7.51566 11.942L4.80733 9.23371C4.56325 8.98963 4.56325 8.5939 4.80733 8.34983C5.0514 8.10575 5.44713 8.10575 5.69121 8.34983L7.9576 10.6162L12.9323 5.64149C13.1764 5.39742 13.5721 5.39742 13.8162 5.64149Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="main__list__item">
+                <div class="main__list__grid">
+                  <button class="main__list__item__header">
+                    Set up a payment provider
+                  </button>
+                  <div class="main__list__toggle">
+                    <div class="main__list__sub item__hidden">
+                      <p class="main__list__item__text">
+                        Choose a payment provider to start accepting payments.
+                        You’ll need to create an account with the payment
+                        provider and set it up with your Shopify store. Learn
+                        more.
+                        <span class="learn__more">Learn more</span>
+                      </p>
+
+                      <button class="main__list__item__button">
+                        Set up payment
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="main__list__image item__hidden">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/payment.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
