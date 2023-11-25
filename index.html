@@ -309,10 +309,12 @@
             <div class="setup__sub">
               <h1 class="setup__header">Setup guide</h1>
               <button
+                role="menu"
                 class="setup__collapse"
                 aria-label="setup menu"
                 aria-haspopup="true"
                 aria-expanded="false"
+                aria-controls="main__item__container"
               >
                 <span class="inner_collpase rotate__default">
                   <svg
@@ -338,32 +340,37 @@
             </p>
 
             <div class="progress__container">
-              <div
-                class="progress__completed"
-                aria-label="count of progress complemented"
-              >
-                1 / 5 completed
+              <div class="progress__completed" aria-hidden="true">
+                0 / 5 completed
               </div>
               <progress
+                aria-live="polite"
                 class="progress__bar"
                 id="progress-bar"
                 value="0"
                 max="5"
-                aria-labelledby="progress label"
+                aria-labelledby="How many checkbox completed"
               >
-                2 out of 5
+                0 out of 5 checkbox completed
               </progress>
             </div>
           </div>
           <!-- list section -->
-          <div class="main__listItem-container">
-            <div class="main__list__child__box bolden__header" data-tag="1">
+          <div
+            class="main__listItem-container item__hidden"
+            id="main__item__container"
+          >
+            <div
+              class="main__list__child__box bolden__header"
+              data-tag="1"
+              role="menuitem"
+            >
               <div
                 role="checkbox"
                 class="checkbox__box"
                 aria-checked="false"
                 tabindex="0"
-                aria-label=""
+                aria-label="customize Your online store checkbox"
               >
                 <div class="checkbox__svg">
                   <svg
@@ -388,7 +395,7 @@
                 </div>
 
                 <svg
-                  class="svg__rotate__checkbox"
+                  class="svg__rotate__checkbox item__hidden"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -404,7 +411,7 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <div class="done_svg">
+                <div class="done_svg item__hidden">
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +431,7 @@
               </div>
               <div class="main__list__item">
                 <div class="main__list__grid">
-                  <button class="main__list__item__header">
+                  <button class="main__list__item__header" aria-expanded="true">
                     Customize your online store
                   </button>
                   <div class="main__list__toggle">
@@ -450,15 +457,18 @@
                 </div>
               </div>
             </div>
-            <div class="main__list__child__box" data-tag="2">
+            <div class="main__list__child__box" data-tag="2" role="menuitem">
               <div
                 role="checkbox"
                 class="checkbox__box"
                 aria-checked="false"
                 tabindex="0"
-                aria-label=""
+                aria-label=" Add your first product checkbox"
               >
-                <div class="checkbox__svg">
+                <div
+                  class="checkbox__svg"
+                  aria-label=" Add your first product checkbox"
+                >
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -481,7 +491,7 @@
                 </div>
 
                 <svg
-                  class="svg__rotate__checkbox"
+                  class="svg__rotate__checkbox item__hidden"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -497,7 +507,7 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <div class="done_svg">
+                <div class="done_svg item__hidden">
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -517,11 +527,17 @@
               </div>
               <div class="main__list__item">
                 <div class="main__list__grid">
-                  <button class="main__list__item__header">
+                  <button
+                    class="main__list__item__header"
+                    aria-expanded="false"
+                  >
                     Add your first product
                   </button>
                   <div class="main__list__toggle">
-                    <div class="main__list__sub item__hidden">
+                    <div
+                      class="main__list__sub item__hidden"
+                      aria-hidden="true"
+                    >
                       <p class="main__list__item__text">
                         Write a description, add photos, and set pricing for the
                         products you plan to sell.
@@ -529,10 +545,12 @@
                       </p>
 
                       <div class="item__button__box">
-                        <button class="main__list__item__button">
+                        <button class="main__list__item__button" tabindex="-1">
                           Add product
                         </button>
-                        <button class="import__button">Import product</button>
+                        <button class="import__button" tabindex="-1">
+                          Import product
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -545,13 +563,13 @@
                 </div>
               </div>
             </div>
-            <div class="main__list__child__box" data-tag="3">
+            <div class="main__list__child__box" data-tag="3" role="menuitem">
               <div
                 role="checkbox"
                 class="checkbox__box"
                 aria-checked="false"
                 tabindex="0"
-                aria-label=""
+                aria-label="Add a custom domain checkbox"
               >
                 <div class="checkbox__svg">
                   <svg
@@ -576,7 +594,7 @@
                 </div>
 
                 <svg
-                  class="svg__rotate__checkbox"
+                  class="svg__rotate__checkbox item__hidden"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -592,7 +610,7 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <div class="done_svg">
+                <div class="done_svg item__hidden">
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -612,11 +630,17 @@
               </div>
               <div class="main__list__item">
                 <div class="main__list__grid">
-                  <button class="main__list__item__header">
+                  <button
+                    class="main__list__item__header"
+                    aria-expanded="false"
+                  >
                     Add a custom domain
                   </button>
                   <div class="main__list__toggle">
-                    <div class="main__list__sub item__hidden">
+                    <div
+                      class="main__list__sub item__hidden"
+                      aria-hidden="true"
+                    >
                       <p class="main__list__item__text">
                         Your current domain is 222219.myshopify.com but you can
                         add a custom domain to help customers find your online
@@ -624,7 +648,7 @@
                         <span class="learn__more">Learn more</span>
                       </p>
 
-                      <button class="main__list__item__button">
+                      <button class="main__list__item__button" tabindex="-1">
                         Add domain
                       </button>
                     </div>
@@ -638,13 +662,13 @@
                 </div>
               </div>
             </div>
-            <div class="main__list__child__box" data-tag="4">
+            <div class="main__list__child__box" data-tag="4" role="menuitem">
               <div
                 role="checkbox"
                 class="checkbox__box"
                 aria-checked="false"
                 tabindex="0"
-                aria-label=""
+                aria-label="Name your store checkbox"
               >
                 <div class="checkbox__svg">
                   <svg
@@ -669,7 +693,7 @@
                 </div>
 
                 <svg
-                  class="svg__rotate__checkbox"
+                  class="svg__rotate__checkbox item__hidden"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -685,7 +709,7 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <div class="done_svg">
+                <div class="done_svg item__hidden">
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -705,11 +729,17 @@
               </div>
               <div class="main__list__item">
                 <div class="main__list__grid">
-                  <button class="main__list__item__header">
+                  <button
+                    class="main__list__item__header"
+                    aria-expanded="false"
+                  >
                     Name your store
                   </button>
                   <div class="main__list__toggle">
-                    <div class="main__list__sub item__hidden">
+                    <div
+                      class="main__list__sub item__hidden"
+                      aria-hidden="true"
+                    >
                       <p class="main__list__item__text">
                         Your temporary store name is currently Davii
                         collections. The store name appears in your admin and
@@ -717,7 +747,7 @@
                         <span class="learn__more">Learn more</span>
                       </p>
 
-                      <button class="main__list__item__button">
+                      <button class="main__list__item__button" tabindex="-1">
                         Name store
                       </button>
                     </div>
@@ -731,13 +761,13 @@
                 </div>
               </div>
             </div>
-            <div class="main__list__child__box" data-tag="5">
+            <div class="main__list__child__box" data-tag="5" role="menuitem">
               <div
                 role="checkbox"
                 class="checkbox__box"
                 aria-checked="false"
                 tabindex="0"
-                aria-label=""
+                aria-label="Set up a payment provider checkbox"
               >
                 <div class="checkbox__svg">
                   <svg
@@ -762,7 +792,7 @@
                 </div>
 
                 <svg
-                  class="svg__rotate__checkbox"
+                  class="svg__rotate__checkbox item__hidden"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -778,7 +808,7 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <div class="done_svg">
+                <div class="done_svg item__hidden">
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -798,11 +828,17 @@
               </div>
               <div class="main__list__item">
                 <div class="main__list__grid">
-                  <button class="main__list__item__header">
+                  <button
+                    class="main__list__item__header"
+                    aria-expanded="false"
+                  >
                     Set up a payment provider
                   </button>
                   <div class="main__list__toggle">
-                    <div class="main__list__sub item__hidden">
+                    <div
+                      class="main__list__sub item__hidden"
+                      aria-hidden="true"
+                    >
                       <p class="main__list__item__text">
                         Choose a payment provider to start accepting payments.
                         You’ll need to create an account with the payment
@@ -811,7 +847,7 @@
                         <span class="learn__more">Learn more</span>
                       </p>
 
-                      <button class="main__list__item__button">
+                      <button class="main__list__item__button" tabindex="-1">
                         Set up payment
                       </button>
                     </div>
@@ -828,6 +864,7 @@
           </div>
         </div>
       </div>
+      <!-- <input type="checkbox" name="" id="" /> -->
     </div>
   </body>
 </html>
