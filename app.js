@@ -255,7 +255,8 @@ window.addEventListener("keydown", (e) => {
     shopify__store.getAttribute("aria-expanded") === "false" &&
     mainExitBtn.getAttribute("aria-expanded") === "true"
   ) {
-    console.log("yes..switch it offf");
+    mainExitBtn.focus()
+    // console.log("yes..switch it offf");
     // document.activeElement.style.backgroundColor = "red";
     const btnExpanded = mainExitBtn.getAttribute("aria-expanded") === "true";
     innerRotateExitBtn.classList.toggle("rotate__arrow");
