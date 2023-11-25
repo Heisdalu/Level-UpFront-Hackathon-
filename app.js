@@ -1,8 +1,11 @@
 // fix search pressed state
 //  fix search focus also
 
+const notificationBtn = document.querySelector(".shopify__notification");
 const progressBar = document.querySelector(".progress__bar");
 const progressCompleted = document.querySelector(".progress__completed");
+const trialInfoExitBtn = document.querySelector(".trial__exit");
+const shopify__store = document.querySelector(".shopify__links");
 
 const mainExitBtn = document.querySelector(".setup__collapse");
 const innerRotateExitBtn = document.querySelector(".inner_collpase");
@@ -11,8 +14,8 @@ const get_AllMainChildHeader__Button = document.querySelectorAll(
   ".main__list__item__header"
 );
 const allMainChildBox = document.querySelectorAll(".main__list__child__box");
-
 let inActive = [1, 2, 3, 4, 5];
+let shopifyCounter = 0;
 
 mainExitBtn.addEventListener("click", (e) => {
   // inner main exiut button
@@ -20,11 +23,14 @@ mainExitBtn.addEventListener("click", (e) => {
   innerRotateExitBtn.classList.toggle("rotate__arrow");
   innerRotateExitBtn.classList.toggle("rotate__default");
   mainListItemBox.classList.toggle("item__hidden");
-  mainExitBtn.setAttribute("aria-expanded", !btnExpanded) ;
+  mainExitBtn.setAttribute("aria-expanded", !btnExpanded);
   console.log(btnExpanded);
-  setTimeout(() => {
-    focusOnTopPrioprity(true);
-  }, 1000);
+  console.log(btnExpanded, inActive);
+  if (!btnExpanded) {
+    setTimeout(() => {
+      focusOnTopPrioprity(true);
+    }, 100);
+  }
 });
 
 // -------- usage for child main box -----------------------
@@ -142,6 +148,11 @@ const onNotCompletedChecked = (value) => {
 const focusOnTopPrioprity = (state = false) => {
   if (inActive.length > 0) {
     // focus on the top priority checkbox
+    console.log(
+      document
+        .querySelector(`[data-tag="${inActive[0]}"]`)
+        .querySelector(".checkbox__box")
+    );
     document
       .querySelector(`[data-tag="${inActive[0]}"]`)
       .querySelector(".checkbox__box")
@@ -180,6 +191,25 @@ window.addEventListener("click", (e) => {
   }
 });
 
+const shopifyVerticalScrollable = () => {
+  const allLink = document.querySelectorAll(".scrollable__link");
+  if (shopifyCounter < allLink.length - 1) {
+    shopifyCounter = shopifyCounter + 1;
+    console.log(shopifyCounter);
+    allLink[shopifyCounter].focus();
+  }
+};
+
+const shopifyHorizontalScrollable = () => {
+  const allLink = document.querySelectorAll(".scrollable__link");
+  console.log(shopifyCounter);
+  if (0 < shopifyCounter) {
+    shopifyCounter = shopifyCounter - 1;
+    console.log(shopifyCounter);
+    allLink[shopifyCounter].focus();
+  }
+};
+
 // focus event-listeners
 
 window.addEventListener("keydown", (e) => {
@@ -187,4 +217,89 @@ window.addEventListener("keydown", (e) => {
   if (e.code === "Space" && e.target.className === "checkbox__box") {
     handleToCheckBox(e.target);
   }
+  if (
+    e.code === "ArrowDown" &&
+    shopify__store.getAttribute("aria-expanded") === "true"
+  ) {
+    shopifyVerticalScrollable();
+  }
+  if (
+    e.code === "ArrowUp" &&
+    shopify__store.getAttribute("aria-expanded") === "true"
+  ) {
+    shopifyHorizontalScrollable();
+  }
 });
+
+//remove trial information
+trialInfoExitBtn.addEventListener("click", () => {
+  document.querySelector(".trial__container").classList.add("item__hidden");
+});
+
+// notifcation button
+
+const notifcationFunc = (e) => {
+  const btn_expanded = notificationBtn.getAttribute("aria-expanded") === "true";
+  const notifcation__dropDwon = document.querySelector(
+    ".notifcation__dropdown"
+  );
+  if (e.target.closest(".shopify__notification")) {
+    if (!btn_expanded) {
+      notificationBtn.setAttribute("aria-expanded", !btn_expanded);
+      notifcation__dropDwon.classList.add("notifcation__dropdown__toggle");
+      document.querySelector(".filter__button").focus();
+    } else {
+      notificationBtn.setAttribute("aria-expanded", !btn_expanded);
+      notifcation__dropDwon.classList.remove("notifcation__dropdown__toggle");
+    }
+  }
+
+  // click somewhere out of the div
+  if (
+    !e.target.closest(".shopify__notification") &&
+    btn_expanded &&
+    !e.target.closest(".notifcation__dropdown")
+  ) {
+    notificationBtn.setAttribute("aria-expanded", !btn_expanded);
+    notifcation__dropDwon.classList.remove("notifcation__dropdown__toggle");
+  }
+};
+
+const myStoreFunc = (e) => {
+  const btn_expanded = shopify__store.getAttribute("aria-expanded") === "true";
+  const myStore__dropDown = document.querySelector(".store__dropdown");
+  console.log(btn_expanded, myStore__dropDown);
+  if (e.target.closest(".shopify__links")) {
+    if (!btn_expanded) {
+      shopify__store.setAttribute("aria-expanded", !btn_expanded);
+      myStore__dropDown.classList.add("notifcation__dropdown__toggle");
+      document.querySelector(".store__second-header").focus();
+    } else {
+      shopify__store.setAttribute("aria-expanded", !btn_expanded);
+      myStore__dropDown.classList.remove("notifcation__dropdown__toggle");
+    }
+  }
+
+  // if the link is clicked.. close the modal..
+  if (e.target.closest(".scrollable__link")) {
+    console.log(e.target);
+    shopify__store.setAttribute("aria-expanded", !btn_expanded);
+    myStore__dropDown.classList.remove("notifcation__dropdown__toggle");
+  }
+  if (
+    !e.target.closest(".shopify__links") &&
+    btn_expanded &&
+    !e.target.closest(".store__dropdown")
+  ) {
+    // click somewhere out of the div
+    shopify__store.setAttribute("aria-expanded", !btn_expanded);
+    myStore__dropDown.classList.remove("notifcation__dropdown__toggle");
+  }
+};
+
+window.addEventListener("click", (e) => {
+  notifcationFunc(e);
+  myStoreFunc(e);
+});
+
+// console.log(notificationBtn);

@@ -192,11 +192,12 @@
             </div>
             <a
               href="https://admin.shopify.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="store__second-header"
+              href="#"
+              
+              aria-label="all stores"
+              class="store__second-header scrollable__link"
             >
-              <span class="store__home-logo"
+              <span class="store__home-logo" aria-hidden="true"
                 ><img
                   src="https://crushingit.tech/hackathon-assets/icon-store.svg"
                   alt="store logo"
@@ -206,8 +207,10 @@
           </div>
 
           <ul class="store__list">
-            <li class="store__list-link">
+            <li class="store__list-link" aria-label="heaven">
               <a
+                aria-label="Help Center"
+                class="scrollable__link"
                 href="https://admin.shopify.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -216,6 +219,8 @@
             </li>
             <li class="store__list-link">
               <a
+                aria-label="Changelog"
+                class="scrollable__link"
                 href="https://admin.shopify.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -224,6 +229,7 @@
             </li>
             <li class="store__list-link">
               <a
+                class="scrollable__link"
                 href="https://admin.shopify.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -232,6 +238,7 @@
             </li>
             <li class="store__list-link">
               <a
+                class="scrollable__link"
                 href="https://admin.shopify.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -240,6 +247,7 @@
             </li>
             <li class="store__list-link">
               <a
+                class="scrollable__link"
                 href="https://admin.shopify.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -250,7 +258,7 @@
 
           <div class="store__last_box">
             <a
-              class="store_details"
+              class="store_details scrollable__link"
               href="https://admin.shopify.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -263,14 +271,14 @@
               >
             </a>
             <a
-              class="store__manage_account"
+              class="store__manage_account scrollable__link"
               href="https://admin.shopify.com/"
               target="_blank"
               rel="noopener noreferrer"
               >Manage account</a
             >
             <a
-              class="store__logout"
+              class="store__logout scrollable__link"
               href="https://admin.shopify.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -286,8 +294,14 @@
           <h1 class="trial__heading">
             Extend your trial for $1/month for 3 months on select plans.
           </h1>
-          <button class="trial__select-plan">Select plan</button>
-          <button aria-label="Exit Modal" class="trial__exit">
+          <a
+            class="trial__select-plan"
+            href="https://www.shopify.com/pricing"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Select plan</a
+          >
+          <button aria-label="Exit Trial Information modal" class="trial__exit">
             <svg
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
@@ -309,14 +323,13 @@
             <div class="setup__sub">
               <h1 class="setup__header">Setup guide</h1>
               <button
-                role="menu"
                 class="setup__collapse"
                 aria-label="setup menu"
                 aria-haspopup="true"
-                aria-expanded="false"
+                aria-expanded="true"
                 aria-controls="main__item__container"
               >
-                <span class="inner_collpase rotate__default">
+                <span class="inner_collpase rotate__arrow">
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -357,7 +370,8 @@
           </div>
           <!-- list section -->
           <div
-            class="main__listItem-container item__hidden"
+            class="main__listItem-container"
+            role="menu"
             id="main__item__container"
           >
             <div
@@ -864,7 +878,6 @@
           </div>
         </div>
       </div>
-      <!-- <input type="checkbox" name="" id="" /> -->
     </div>
   </body>
 </html>

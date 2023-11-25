@@ -99,8 +99,8 @@ body {
   font-weight: 500;
 }
 
-.shopify__search-container:focus-visible {
-  outline: 2px solid var(--white);
+.shopify__search-container:focus {
+  outline: 2px solid var(--white)!important;
 }
 
 .shopify__search::placeholder {
@@ -142,8 +142,8 @@ body {
   /* background-color: red!important; */
 }
 
-.shopify__notification:focus-visible,
-.shopify__links:focus-visible {
+.shopify__notification:focus,
+.shopify__links:focus {
   background-color: #656266;
   box-shadow: 0px 0px 0px 3px #005bd3, 0px 0px 0px 1px #000;
   border: none;
@@ -187,6 +187,13 @@ body {
   /* opacity: 0 */
   display: none;
   opacity: 0;
+}
+
+.notifcation__dropdown__toggle {
+  display: block !important;
+  opacity: 1 !important;
+  transition: opacity 1s linear !important;
+  transition-delay: 1s !important;
 }
 
 .notifcation__dropdown__header-container {
@@ -325,6 +332,7 @@ body {
   padding: 0.375rem;
   border-radius: var(--rounded-1);
   margin-bottom: 0.25rem;
+  overflow: hidden;
 }
 
 .store__home-logo {
@@ -411,11 +419,11 @@ body {
   line-height: 1.1375rem;
 }
 
-.store__manage_account:focus-visible,
-.store__logout:focus-visible,
-.store__list-link a:focus-visible,
-.store__second-header:focus-visible,
-.store_details:focus-visible {
+.store__manage_account:focus,
+.store__logout:focus,
+.store__list-link a:focus,
+.store__second-header:focus,
+.store_details:focus {
   outline: none;
   border: 2px solid var(--blue);
 }
@@ -430,6 +438,7 @@ body {
 
 .section__container {
   border: 1px solid;
+  padding-top: 1.75rem;
 }
 
 .trial__container {
@@ -439,7 +448,7 @@ body {
   grid-template-columns: 5fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 1rem;
-  margin-top: 1.75rem;
+  /* margin-top: 1.75rem; */
 }
 
 .trial__heading {
@@ -462,6 +471,7 @@ body {
 }
 
 .trial__select-plan {
+  display: block;
   border-radius: 0.375rem;
   height: 1.75rem;
   width: 6.1875rem;
@@ -476,9 +486,10 @@ body {
   line-height: 0.975rem;
   grid-area: 2/1/3/2;
   cursor: pointer;
+  text-align: center;
 }
 
-.trial__exit:focus-visible {
+.trial__exit:focus {
   outline: none;
   border: none;
   border-top: 1.5px solid #ffffff33;
@@ -541,7 +552,7 @@ body {
 .setup__collapse:active {
   background-color: #e0e0e0;
 }
-.setup__collapse:focus-visible {
+.setup__collapse:focus {
   border: 2px solid var(--blue);
 }
 
@@ -644,7 +655,7 @@ body {
   cursor: pointer;
 }
 
-.main__list__item__header:focus-visible {
+.main__list__item__header:focus {
   outline: 1px solid;
 }
 .bolden__header {
@@ -841,6 +852,7 @@ body {
   }
 
   .section__container {
+    padding-top: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -848,7 +860,6 @@ body {
   .trial__container {
     margin: 0 auto;
     max-width: 800px;
-    margin-top: 2rem;
     display: flex;
     align-items: center;
     border-radius: 0.5rem;
@@ -881,6 +892,8 @@ body {
   .main__list__image {
     display: block;
   }
+
+
 }
 
 @media screen and (min-width: 850px) {
