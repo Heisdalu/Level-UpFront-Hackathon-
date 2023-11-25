@@ -6,6 +6,8 @@ const progressBar = document.querySelector(".progress__bar");
 const progressCompleted = document.querySelector(".progress__completed");
 const trialInfoExitBtn = document.querySelector(".trial__exit");
 const shopify__store = document.querySelector(".shopify__links");
+const searchMain = document.querySelector(".shopify__search-container");
+const searchInput = document.querySelector(".shopify__search");
 
 const mainExitBtn = document.querySelector(".setup__collapse");
 const innerRotateExitBtn = document.querySelector(".inner_collpase");
@@ -297,9 +299,27 @@ const myStoreFunc = (e) => {
   }
 };
 
+// search bar
+const searchFunc = (e) => {
+  if (e.target.closest(".shopify__search-container")) {
+    const searchInput = document.querySelector(".shopify__search");
+    console.log(searchMain);
+    searchMain.classList.add("shopify__search-container__focused");
+    searchInput.focus();
+  }
+};
+
 window.addEventListener("click", (e) => {
   notifcationFunc(e);
   myStoreFunc(e);
+  searchFunc(e);
 });
 
-// console.log(notificationBtn);
+// focus class on container
+searchInput.addEventListener("focus", (e) => {
+  searchMain.classList.add("shopify__search-container__focused");
+});
+// remove focus class on container
+searchInput.addEventListener("blur", (e) => {
+  searchMain.classList.remove("shopify__search-container__focused");
+});

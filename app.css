@@ -99,8 +99,8 @@ body {
   font-weight: 500;
 }
 
-.shopify__search-container:focus {
-  outline: 2px solid var(--white)!important;
+.shopify__search-container__focused {
+  outline: 2px solid var(--white) !important;
 }
 
 .shopify__search::placeholder {
@@ -462,7 +462,6 @@ body {
 
 .trial__exit {
   grid-area: 1/2/2/3;
-  border: 1px solid white;
   padding: 0.5rem;
   border-radius: 0.625rem;
   width: 2.25rem;
@@ -893,7 +892,9 @@ body {
     display: block;
   }
 
-
+  .notifcation__dropdown {
+    max-width: 23.9375rem;
+  }
 }
 
 @media screen and (min-width: 850px) {
