@@ -437,7 +437,6 @@ body {
 }
 
 .section__container {
-  border: 1px solid;
   padding-top: 1.75rem;
 }
 
@@ -501,7 +500,6 @@ body {
 
 .main__container {
   padding: 0.5rem;
-  border: 1px solid;
   border: 1px solid var(--stroke-s-50);
   border-radius: 1.125rem;
   background-color: var(--white);
@@ -510,7 +508,6 @@ body {
 
 .setup__container {
   border-radius: 1.125rem;
-  border: 1px solid;
   padding: 0.5rem;
 }
 
@@ -625,14 +622,10 @@ body {
   grid-template-columns: 1.5rem 1fr;
   grid-gap: 0.5rem;
   border-radius: 0.625rem;
-  border: 1px solid;
-  /* background: #f3f3f3; */
-  /* height: 2.5rem; */
 }
 
 .main__list__child__box:not(:last-child) {
   margin-bottom: 0.125rem;
-  border: 1px solid;
 }
 
 .main__list__item {
@@ -654,9 +647,12 @@ body {
   cursor: pointer;
 }
 
-.main__list__item__header:focus {
-  outline: 1px solid;
+.main__list__item__header:focus-visible {
+  border-radius: 0.375rem;
+  border: 2px solid var(--blue);
+  background: #fff;
 }
+
 .bolden__header {
   background-color: #f3f3f3 !important;
 }
@@ -712,6 +708,17 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 0.975rem;
+  cursor: pointer;
+}
+
+.main__list__item__button:focus {
+  border-radius: 0.375rem;
+  border-top: 1.5px solid #ffffff33;
+  border-right: 1.5px solid #ffffff33;
+  border-left: 1.5px solid #ffffff33;
+  background-color: #404040;
+  box-shadow: 0px 0px 0px 5px #005bd3, 0px 0px 0px 3px #fff,
+    0px 0px 0px 1.5px #333;
 }
 
 .item__hidden {
@@ -745,10 +752,18 @@ body {
   /* loading svg */
 }
 
+@keyframes svgAnimate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .import__button {
   margin-left: 1rem;
   padding: 0.375rem 0.75rem;
-  border: 1px solid;
   border-radius: 0.375rem;
   color: #323232;
   font-family: var(--Inter-font);
@@ -757,13 +772,10 @@ body {
   line-height: 0.975rem;
 }
 
-@keyframes svgAnimate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.import__button:focus {
+  border-radius: 0.375rem;
+  border: 2px solid #005bd3;
+  background: #fff;
 }
 
 /*focus on hovering devices  */
@@ -791,8 +803,19 @@ body {
     background: #e7e7e7;
   }
 
-  .main__list__child__box:hover {
-    background-color: red;
+  .main__list__item__button:hover {
+    border-radius: 0.375rem;
+    border-top: 1.5px solid #ffffff33;
+    border-right: 1.5px solid #ffffff33;
+    border-left: 1.5px solid #ffffff33;
+    background: #2a2a2a;
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+      0px 2px 0px 0px #000;
+  }
+
+  .import__button:hover {
+    border-radius: 0.375rem;
+    background: #e7e7e7;
   }
 }
 

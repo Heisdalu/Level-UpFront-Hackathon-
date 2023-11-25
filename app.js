@@ -8,6 +8,9 @@ const trialInfoExitBtn = document.querySelector(".trial__exit");
 const shopify__store = document.querySelector(".shopify__links");
 const searchMain = document.querySelector(".shopify__search-container");
 const searchInput = document.querySelector(".shopify__search");
+const notifcation__dropDwon = document.querySelector(".notifcation__dropdown");
+const myStore__dropDown = document.querySelector(".store__dropdown");
+const allLink = document.querySelectorAll(".scrollable__link");
 
 const mainExitBtn = document.querySelector(".setup__collapse");
 const innerRotateExitBtn = document.querySelector(".inner_collpase");
@@ -26,8 +29,6 @@ mainExitBtn.addEventListener("click", (e) => {
   innerRotateExitBtn.classList.toggle("rotate__default");
   mainListItemBox.classList.toggle("item__hidden");
   mainExitBtn.setAttribute("aria-expanded", !btnExpanded);
-  console.log(btnExpanded);
-  console.log(btnExpanded, inActive);
   if (!btnExpanded) {
     setTimeout(() => {
       focusOnTopPrioprity(true);
@@ -105,14 +106,12 @@ const handleToCheckBox = (parentItem) => {
       loading.classList.add("item__hidden");
       unChecked.classList.remove("item__hidden");
       progressBar.value = progressBar.value - 1;
-      // console.log(progressBar);
       progressBar.textContent = `${progressBar.value} out of 5 checkbox completed`;
       progressCompleted.textContent = `${progressBar.value} / 5 completed`;
 
       // auto move
       const mainParentItemTag = +parentItem.closest(".main__list__child__box")
         .dataset.tag;
-      // console.log(mainParentItemTag);
       onNotCompletedChecked(mainParentItemTag);
     }, 300);
   }
@@ -120,7 +119,6 @@ const handleToCheckBox = (parentItem) => {
 
 const onCompletedCheckBox = (parent_data_tag) => {
   let activeMain__BoxTracker = document.querySelector(".bolden__header");
-  // console.log(activeMain__BoxTracker);
   if (
     inActive[0] &&
     inActive[1] &&
@@ -132,7 +130,6 @@ const onCompletedCheckBox = (parent_data_tag) => {
     const nextParentTag = document.querySelector(`[data-tag="${inActive[0]}"]`);
     resetAllMainChildBox();
     addActiveToMaincChildBox(nextParentTag);
-    console.log(nextParentTag.querySelector(".checkbox__box"));
     nextParentTag.querySelector(".checkbox__box").focus();
   } else {
     // check if active box is equal to the checkbox clicked
@@ -150,11 +147,6 @@ const onNotCompletedChecked = (value) => {
 const focusOnTopPrioprity = (state = false) => {
   if (inActive.length > 0) {
     // focus on the top priority checkbox
-    console.log(
-      document
-        .querySelector(`[data-tag="${inActive[0]}"]`)
-        .querySelector(".checkbox__box")
-    );
     document
       .querySelector(`[data-tag="${inActive[0]}"]`)
       .querySelector(".checkbox__box")
@@ -194,28 +186,40 @@ window.addEventListener("click", (e) => {
 });
 
 const shopifyVerticalScrollable = () => {
-  const allLink = document.querySelectorAll(".scrollable__link");
   if (shopifyCounter < allLink.length - 1) {
     shopifyCounter = shopifyCounter + 1;
-    console.log(shopifyCounter);
     allLink[shopifyCounter].focus();
   }
 };
 
-const shopifyHorizontalScrollable = () => {
-  const allLink = document.querySelectorAll(".scrollable__link");
-  console.log(shopifyCounter);
+const shopifyBackwardScrollable = () => {
   if (0 < shopifyCounter) {
     shopifyCounter = shopifyCounter - 1;
-    console.log(shopifyCounter);
     allLink[shopifyCounter].focus();
+  }
+};
+
+const leftScrollBack = () => {
+  if (shopifyCounter === 0) {
+    shopifyCounter = allLink.length;
+    shopifyBackwardScrollable();
+  } else {
+    shopifyBackwardScrollable();
+  }
+};
+
+const rightScrollForward = () => {
+  if (shopifyCounter === allLink.length - 1) {
+    shopifyCounter = -1;
+    shopifyVerticalScrollable();
+  } else {
+    shopifyVerticalScrollable();
   }
 };
 
 // focus event-listeners
 
 window.addEventListener("keydown", (e) => {
-  // console.log(e.code, e.target);
   if (e.code === "Space" && e.target.className === "checkbox__box") {
     handleToCheckBox(e.target);
   }
@@ -229,22 +233,70 @@ window.addEventListener("keydown", (e) => {
     e.code === "ArrowUp" &&
     shopify__store.getAttribute("aria-expanded") === "true"
   ) {
-    shopifyHorizontalScrollable();
+    shopifyBackwardScrollable();
+  }
+  if (
+    e.code === "ArrowLeft" &&
+    shopify__store.getAttribute("aria-expanded") === "true"
+  ) {
+    leftScrollBack();
+  }
+  if (
+    e.code === "ArrowRight" &&
+    shopify__store.getAttribute("aria-expanded") === "true"
+  ) {
+    rightScrollForward();
+  }
+
+  // make sure opne drop dwon are false, then setup menu is on
+  if (
+    e.code === "Escape" &&
+    notificationBtn.getAttribute("aria-expanded") === "false" &&
+    shopify__store.getAttribute("aria-expanded") === "false" &&
+    mainExitBtn.getAttribute("aria-expanded") === "true"
+  ) {
+    console.log("yes..switch it offf");
+    // document.activeElement.style.backgroundColor = "red";
+    const btnExpanded = mainExitBtn.getAttribute("aria-expanded") === "true";
+    innerRotateExitBtn.classList.toggle("rotate__arrow");
+    innerRotateExitBtn.classList.toggle("rotate__default");
+    mainListItemBox.classList.toggle("item__hidden");
+    mainExitBtn.setAttribute("aria-expanded", !btnExpanded);
+    if (!btnExpanded) {
+      setTimeout(() => {
+        focusOnTopPrioprity(true);
+      }, 100);
+    }
+  }
+
+  if (
+    e.code === "Escape" &&
+    shopify__store.getAttribute("aria-expanded") === "true"
+  ) {
+    shopify__store.setAttribute("aria-expanded", false);
+    myStore__dropDown.classList.remove("notifcation__dropdown__toggle");
+    shopify__store.focus();
+  }
+  if (
+    e.code === "Escape" &&
+    notificationBtn.getAttribute("aria-expanded") === "true"
+  ) {
+    notificationBtn.setAttribute("aria-expanded", false);
+    notifcation__dropDwon.classList.remove("notifcation__dropdown__toggle");
+    notificationBtn.focus();
   }
 });
 
 //remove trial information
 trialInfoExitBtn.addEventListener("click", () => {
   document.querySelector(".trial__container").classList.add("item__hidden");
+  mainExitBtn.focus();
 });
 
 // notifcation button
 
 const notifcationFunc = (e) => {
   const btn_expanded = notificationBtn.getAttribute("aria-expanded") === "true";
-  const notifcation__dropDwon = document.querySelector(
-    ".notifcation__dropdown"
-  );
   if (e.target.closest(".shopify__notification")) {
     if (!btn_expanded) {
       notificationBtn.setAttribute("aria-expanded", !btn_expanded);
@@ -269,8 +321,6 @@ const notifcationFunc = (e) => {
 
 const myStoreFunc = (e) => {
   const btn_expanded = shopify__store.getAttribute("aria-expanded") === "true";
-  const myStore__dropDown = document.querySelector(".store__dropdown");
-  console.log(btn_expanded, myStore__dropDown);
   if (e.target.closest(".shopify__links")) {
     if (!btn_expanded) {
       shopify__store.setAttribute("aria-expanded", !btn_expanded);
@@ -284,7 +334,6 @@ const myStoreFunc = (e) => {
 
   // if the link is clicked.. close the modal..
   if (e.target.closest(".scrollable__link")) {
-    console.log(e.target);
     shopify__store.setAttribute("aria-expanded", !btn_expanded);
     myStore__dropDown.classList.remove("notifcation__dropdown__toggle");
   }
@@ -303,7 +352,6 @@ const myStoreFunc = (e) => {
 const searchFunc = (e) => {
   if (e.target.closest(".shopify__search-container")) {
     const searchInput = document.querySelector(".shopify__search");
-    console.log(searchMain);
     searchMain.classList.add("shopify__search-container__focused");
     searchInput.focus();
   }
